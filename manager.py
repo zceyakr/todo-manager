@@ -37,7 +37,7 @@ class Manager(object):
 
             index += 1
         else:
-            print("Sorry, the task was either already completed or just not found")
+            print("Sorry, that task was not found.")
 
         file.truncate(0)
 
