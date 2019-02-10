@@ -1,8 +1,8 @@
-import item
-import manager
+from item import Items
+from manager import Manager
 
+run = Manager()
 
-run = manager.Manager()
 while True:
     action = input("""
 What do you want to do? Do you want to list, add, complete, or quit?
@@ -14,9 +14,9 @@ What do you want to do? Do you want to list, add, complete, or quit?
     elif action == "add":
         print("\nWhat task are you adding?")
         new_task = input("> ")
-        add_task = item.Items(new_task)
+        add_task = Items(new_task)
         run.add(add_task)
-        print(f"You added the task: {new_task}")
+        print(f"\nYou added the task: {new_task}")
 
     elif action == "complete":
         print("\nWhat is the name of the task you'd like to mark as completed?")
@@ -24,7 +24,7 @@ What do you want to do? Do you want to list, add, complete, or quit?
         run.complete(task_to_complete)
 
     elif action == "quit":
-        print("Goodbye.")
+        print("\nGoodbye.\n")
         exit()
 
     else:

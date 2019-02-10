@@ -1,4 +1,4 @@
-import item
+from item import Items
 
 class Manager(object):
 
@@ -21,14 +21,14 @@ class Manager(object):
         file.write(f"{item.task}|||{item.time}|||{item.is_task_complete}\n")
         file.close()
 
-    def complete(self, thing):
+    def complete(self, name):
         file = open("todos.txt", "r+")
 
         lines = file.readlines()
 
         index = 0
         for line in lines:
-            if thing in line:
+            if name in line:
                 section = line.split("|||")
                 if section[2] == "False\n":
                     section[2] = "True\n"
